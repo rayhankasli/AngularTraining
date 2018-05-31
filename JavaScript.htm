@@ -1,0 +1,84 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>JavaScript Example</title>
+       
+    </head>
+    <body>
+            
+          <p id="demo"></p><br>
+          <p id="bike"></p><br>
+          <p id="bikesort"></p><br>
+          
+
+          <p>Multiplication table</p>
+            <input placeholder="Enter the number" type="text" name="number" onkeyup="numberValid();" id="number"/><span id="warning"></span>
+            <br />
+            <button id="btn" onclick="table()">Get Table</button>
+            <br />
+
+            <p id="tab"></p>
+
+          <script type="text/javascript">
+            var a=10,b=20; // declare variable and assign value
+             
+             
+                 alert("hello"); // alert box
+                 console.log(a); // print value in browsers console 
+                 document.getElementById("demo").innerHTML=a+b; // print value in <p> use their id demo
+         
+                    
+            var bike = ["FZ","RS-200","Hunk"]; //declare array
+
+                    document.getElementById("bike").innerHTML=bike[1]; // print array perticular value in <p> use their id bike
+                    document.getElementById("bikesort").innerHTML=bike.sort();  // print array Assending format
+                    document.getElementById("btn").disabled = true;
+                    
+            
+            
+            // Example of for loop and function
+            function table(){
+                    var t=document.getElementById("number").value;
+                    var i ;
+                    var result='';
+                    for (i = 1 ; i < 11 ; i++) {
+                        var c = parseInt(t) * parseInt(i);
+                        result += t + " x " + i + " = " + c + '</br>';
+                        
+                    }
+                    document.getElementById("tab").innerHTML = t + "x" + i + "=" + result;
+            }
+
+
+            //Function which is used to validate the number field  
+            function numberValid()
+            {
+                var num = document.getElementById("number").value;
+                var msg = document.getElementById("warning");
+                var pattern = /[0-9]|\./;
+                console.log(num);
+                if(num=="") 
+                {
+                    document.getElementById("btn").disabled = true;
+                    msg.style.color="#ff6666";
+                    msg.innerHTML = "Please Enter Number";
+                    document.getElementById("number").focus();
+                }
+                else if(!pattern.test(num)) //text box allow only digit
+                {
+                    document.getElementById("btn").disabled = true;
+                    msg.style.color="#ff6666";
+                    msg.innerHTML = "Allow only Digit";
+                    document.getElementById("number").focus();
+                }
+                else{
+                    msg.innerHTML = " ";
+                    document.getElementById("btn").disabled = false;
+                }
+                
+            }
+
+        </script>   
+
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<style>
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+</style>
+
+
+        <img id="imgsignal" src="redsignal.png" height="200px" class="center"/><br>
+
+
+
+        <img id="car" src="car.jpg" height="200px" />
+        <img src="road.jpg" height="200px" width="100%"/><br><br><br>
+
+        <button id="btnsignal" onclick="signal();" class="center">Change Signal</button>
+
+<script>
+
+function signal(){
+    var getSignal=Math.floor(Math.random() * 3) + 1;
+    
+
+    var element=document.getElementById("car");
+    var current_margin=1;
+
+
+
+
+    switch(getSignal)
+    {
+        case 1://Green Signal
+        
+                document.getElementById('imgsignal').src='greensignal.png';   
+                setInterval(function(){
+                    if(window.innerWidth<=current_margin+100)
+                    { current_margin=1; }
+                    var new_margin=parseInt(current_margin)+1;
+                    current_margin=new_margin;
+                    element.style.marginLeft=new_margin;
+                    },1);
+                    
+                break;
+        case 2://Yellow Signal
+      
+                document.getElementById('imgsignal').src='yellosignal.png';   
+                setInterval(function(){
+                    if(window.innerWidth<=current_margin+100)
+                    { current_margin=1; }
+                    var new_margin=parseInt(current_margin)+1;
+                    current_margin=new_margin;
+                    element.style.marginLeft=new_margin;
+                    },30);
+                break;
+        case 3://Red Signal
+        
+                document.getElementById('imgsignal').src='redsignal.png';
+                document.location.reload();
+                break;
+                    
+    }
+
+
+}
+</script>

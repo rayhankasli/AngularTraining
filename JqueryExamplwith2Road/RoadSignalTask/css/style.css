@@ -1,0 +1,95 @@
+        body{
+            overflow-x:hidden ; 
+            overflow-y: scroll; 
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center; 
+            background-size:120px 1000px;
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+        .flex-container {
+            display: flex;
+            margin: auto;
+            width: 100%;                    
+        }
+        .car
+        {
+            padding-top: 100px;
+            padding-bottom: 50px;
+         
+           
+            
+            width: 100%;
+            
+        
+        }
+        .vcardiv
+        {
+           
+            padding-right: 90px;
+            padding-left: 870px;
+            
+            width: 10%;
+            
+        }
+        .green {
+            background-color: #4CAF50;;
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .red {
+            background-color: #f44336;;
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .yellow {
+            background-color: #CCCC00;
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .setvsignal
+        {
+            padding-left: 75%;
+        }
+        .sethsignal
+        {
+            padding-left: 10px;
+        }
+        .hcardiv
+        {
+            margin-left: 750px;
+            padding-right: 90px;
+            padding-left: 70px;
+            
+            width: 10%;
+            background-color: #f44336;
+        }

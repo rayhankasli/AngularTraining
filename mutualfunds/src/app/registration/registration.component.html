@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Registration</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Registration</h2>
+    <form [formGroup]="registerform" (ngSubmit)="register()">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter Email" formControlName="email">
+        <div *ngIf="registerform.controls.email.touched && registerform.controls.email.hasError('required')" class="alert alert-danger">Email is Required!</div>
+        <div *ngIf="registerform.controls.email.touched && registerform.controls.email.hasError('email')" class="alert alert-danger">Invalid Email!</div>
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter Password" formControlName="password">
+        <div *ngIf="registerform.controls.password.touched && registerform.controls.password.hasError('required')" class="alert alert-danger">Password is Required!</div>
+        <div *ngIf="registerform.controls.password.touched && registerform.controls.password.hasError('pattern')" class="alert alert-danger">
+          Your password must be at least 6 to 12 characters long, contain at least one uppercase, lowercase, number and special charecter.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pwd">PAN Card No:</label>
+        <input type="text" class="form-control text-uppercase" id="pancardno" placeholder="Enter PAN Card No" formControlName="pancardno" >
+        <div *ngIf="registerform.controls.pancardno.touched && registerform.controls.pancardno.hasError('required')" class="alert alert-danger">Pancard Number is Required!</div>
+        <div *ngIf="registerform.controls.pancardno.touched && registerform.controls.pancardno.hasError('pattern')" class="alert alert-danger">Invalid Pancard Number!</div>
+      </div>
+     
+      <input class="btn btn-primary" [disabled]="registerform.invalid" type="submit" value="Submit" />
+    </form>
+  </div>
+</body>
+</html>

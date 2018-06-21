@@ -9,6 +9,7 @@ import { FormGroup , FormControl ,Validators, NgForm} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
+
   constructor(private route : Router) {
     
   }
@@ -16,13 +17,22 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  form = new FormGroup({
+	// Set Validation for login page
+	form = new FormGroup({
+	
+	// Email field validation set a required and typed as email 
     email: new FormControl('', Validators.compose([
       Validators.required,
       Validators.email
     ])),
+	
+	// Password field validation set a required 
     password: new FormControl('', Validators.required)
+	
   });
+
+
+  // login function which is active when user click on login button of login.html page 
   login()
   {
     let email =  this.form.value.email;

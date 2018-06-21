@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MutualFunds</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>MutualFunds Portal</h2>
+        <div class="list-group">
+          <label class="list-group-item active">List of MutualFunds</label>
+          <a href="login" class="list-group-item">Aditya Birla Sun Life Frontline Equity Fund</a>
+          <a href="registration" class="list-group-item">Aditya Birla Sun Life Equity Fund</a>
+          <a href="login" class="list-group-item">Aditya Birla Sun Life Tax Relief 96</a>
+          <a href="registration" class="list-group-item">Aditya Birla Sun Life Equity Advantage Fund</a>
+        </div>
+      </div>
+
+
+      <table class="table my-4">
+        <tbody>
+        <thead>
+            <tr>
+              <th>Email </th>
+              <th>Pancard Number</th>
+            </tr>
+          </thead>
+      <ul class="list-unstyled">
+        <li *ngFor="let user of users">
+          <tr>
+            
+            <td>{{user.email}}</td>
+            <td>{{user.pancardno}}</td>
+              
+           
+          </tr>
+        </li> 
+      </ul>     
+    </tbody>
+  </table>
+
+</body>
+</html>
